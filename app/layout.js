@@ -83,6 +83,67 @@ export const metadata = {
   }
 };
 
+// export default function RootLayout({ children }) {
+//   return (
+//     <ClerkProvider>
+//       <html 
+//         lang="en" 
+//         className={`${geistSans.variable} ${geistMono.variable}`}
+//       >
+//         <body 
+//           className={`
+//             antialiased 
+//             min-h-screen 
+//             flex 
+//             flex-col 
+//             bg-white 
+//             text-gray-900 
+//             font-sans
+//           `}
+//         >
+//           <a 
+//             href="#main-content" 
+//             className="
+//               absolute 
+//               top-[-999px] 
+//               left-[-999px] 
+//               z-[-1] 
+//               focus:top-0 
+//               focus:left-0 
+//               focus:z-50 
+//               p-4 
+//               bg-indigo-600 
+//               text-white
+//             "
+//           >
+//             Skip to main content
+//           </a>
+          
+//           <Header />
+//           <Toaster />
+          
+//           <main 
+//             id="main-content" 
+//             className="
+//               flex-grow 
+//               max-w-full 
+//               mx-0 
+//               w-full 
+//               px-0 
+//               sm:px-0 
+//               lg:px-0
+//             "
+//           >
+//             {children}
+//           </main>
+//           <Footer />
+          
+//         </body>
+//       </html>
+//     </ClerkProvider>
+//   );
+// }
+
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
@@ -123,25 +184,37 @@ export default function RootLayout({ children }) {
           <Toaster />
           
           <main 
-            id="main-content" 
-            className="
-              flex-grow 
-              pt-16 
-              sm:pt-20 
-              max-w-7xl 
-              mx-auto 
-              w-full 
-              px-4 
-              sm:px-6 
-              lg:px-8
-            "
-          >
-            {children}
-          </main>
+  id="main-content" 
+  className="
+    flex-grow 
+    w-full 
+    pt-[72px] 
+    px-4 
+    sm:px-6 
+    lg:px-8
+    min-h-[calc(100vh-72px-96px)]  // assuming ~96px footer
+  "
+>
+  {children}
+</main>
+
           
-          <Footer />
+          {/* Ensure Footer is visible */}
+          <Footer 
+            className="
+              w-full 
+              bg-gray-100 
+              text-gray-700 
+              py-4 
+              border-t 
+              border-gray-300
+            "
+          />
+          
         </body>
       </html>
     </ClerkProvider>
   );
 }
+
+

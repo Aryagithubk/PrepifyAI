@@ -86,7 +86,7 @@ We welcome contributions from the community! To contribute to this project, foll
 
 2. **Clone your forked repository**:
    ```bash
-   git clone https://github.com/yourusername/full-stack-ai-mock-interview-app.git
+   git clone https://github.com/Aryagithubk/PrepifyAI
    ```
 
 3. **Create a new branch** for your feature or bug fix:
@@ -109,4 +109,3 @@ We welcome contributions from the community! To contribute to this project, foll
 7. **Create a pull request**:  
    Go to the original repository and open a pull request.
 
-For more information, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.

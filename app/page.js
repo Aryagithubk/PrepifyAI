@@ -206,17 +206,17 @@ export default function ResourcesPage() {
 
           {/* Category Tabs */}
           <div className="flex flex-wrap justify-center mb-12 gap-4">
-            {Object.entries(resourceCategories).map(([category, data]) => (
+            {Object.entries(resourceCategories).map(([key, val]) => (
               <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
+                key={key}
+                onClick={() => setActiveCategory(key)}
                 className={`flex items-center px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 
-                ${activeCategory === category
-                    ? 'bg-brown-700 text-white shadow-lg scale-105'
+                ${activeCategory === key
+                    ? 'bg-black text-white shadow-lg scale-105'
                     : 'bg-white text-gray-900 hover:bg-brown-100 border border-gray-200'}`}
               >
-                {data.icon}
-                {category.charAt(0).toUpperCase() + category.slice(1)} Resources
+                {val.icon}
+                {key.charAt(0).toUpperCase() + key.slice(1)} Resources
               </button>
             ))}
           </div>
@@ -225,6 +225,7 @@ export default function ResourcesPage() {
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10">
             {resourceCategories[activeCategory].resources.map((resource, idx) => (
               <ResourceCard key={idx} {...resource} />
+              // jo v component ya tags hote h usme ek default property hoti h i.e. key jisko hm map use krte waqt use krte h taki jitni bar loop chale utni bar wo component render ho sake
             ))}
           </div>
 
